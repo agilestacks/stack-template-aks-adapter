@@ -1,0 +1,51 @@
+---
+version: 1
+kind: stack
+meta:
+  name: k8s-aks-import:1
+  brief: Complete AKS stack
+
+components:
+- name: k8s-aks
+  source:
+    dir: components/k8s-aks
+- name: tiller
+  source:
+    dir: components/tiller
+- name: cert-manager
+  source:
+    dir: components/cert-manager
+- name: traefik
+  source:
+    dir: components/traefik
+- name: dex
+  source:
+    dir: components/dex
+- name: kube-dashboard
+  source:
+    dir: components/kube-dashboard
+- name: automation-tasks
+  source:
+    dir: components/namespace
+
+lifecycle:
+  verbs: [deploy, undeploy]
+  order:
+  - k8s-aks
+  - tiller
+  - cert-manager
+  - traefik
+  - dex
+  - kube-dashboard
+  - automation-tasks
+  requires:
+    optional:
+    - component.cert-manager.enabled:cert-manager
+    - component.kubernetes-dashboard.enabled:kube-dashboard
+
+outputs:
+- name: k8s-aks:dns.domain
+- name: k8s-aks:kubernetes.flavor
+- name: k8s-aks:kubernetes.api.endpoint
+- name: k8s-aks:kubernetes.api.caCert
+- name: k8s-aks:kubernetes.api.token

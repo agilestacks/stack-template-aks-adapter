@@ -1,0 +1,24 @@
+parameters:
+- name: cloud.kind
+  value: azure
+- name: dns.domain
+- name: cloud.region
+- name: cloud.azureResourceGroupName
+- name: cloud.azureClientId
+  fromEnv: AZURE_CLIENT_ID
+- name: cloud.azureTenantId
+  fromEnv: AZURE_TENANT_ID
+- name: cloud.azureClientSecret
+  fromEnv: AZURE_CLIENT_SECRET
+- name: cloud.azureSubscriptionId
+  fromEnv: AZURE_SUBSCRIPTION_ID
+
+- name: terraform.bucket
+  kind: user
+  parameters:
+  - name: name
+    default: terraform.agilestacks.com
+    fromEnv: STATE_BUCKET
+  - name: region
+    default: us-east-1
+    fromEnv: STATE_REGION
