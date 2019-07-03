@@ -36,3 +36,6 @@ parameters:
 
 - name: component.kubernetes-dashboard.name
   value: kubernetes-dashboard-asi
+
+- name: component.traefik.helm.timeout
+  value: 1800
