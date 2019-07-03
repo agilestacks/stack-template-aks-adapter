@@ -50,3 +50,10 @@ outputs:
 - name: k8s-aks:kubernetes.api.endpoint
 - name: k8s-aks:kubernetes.api.caCert
 - name: k8s-aks:kubernetes.api.token
+- name: cert-manager:component.tls.kind
+- name: traefik:component.ingress.protocol
+- name: traefik:component.ingress.fqdn
+- name: traefik:component.ingress.ssoFqdn
+- name: traefik:component.ingress.urlPrefix
+- name: traefik:component.ingress.ssoUrlPrefix
+- name: kube-dashboard:component.kubernetes-dashboard.url
