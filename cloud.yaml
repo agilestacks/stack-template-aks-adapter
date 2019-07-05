@@ -17,8 +17,11 @@ parameters:
   kind: user
   parameters:
   - name: name
-    default: terraform.agilestacks.com
+    default: azuresuperhubio
     fromEnv: STATE_BUCKET
+  - name: container
+    default: agilestacks
+    fromEnv: STATE_CONTAINER
   - name: region
-    default: us-east-1
+    default: eastus2
     fromEnv: STATE_REGION
