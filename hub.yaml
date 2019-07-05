@@ -3,7 +3,7 @@ version: 1
 kind: stack
 meta:
   name: k8s-aks-import:1
-  brief: Complete AKS stack
+  brief: AKS import adapter stack
 
 components:
 - name: k8s-aks
@@ -45,8 +45,11 @@ lifecycle:
 
 outputs:
 - name: cloud.kind
+- name: cloud.region
+- name: cloud.availabilityZone
 - name: k8s-aks:dns.domain
 - name: k8s-aks:kubernetes.flavor
+- name: k8s-aks:kubernetes.aks.cluster
 - name: k8s-aks:kubernetes.api.endpoint
 - name: k8s-aks:kubernetes.api.caCert
 - name: k8s-aks:kubernetes.api.token
