@@ -42,6 +42,8 @@ lifecycle:
   - dex
   - kube-dashboard
   - automation-tasks
+  optional:
+  - kube-dashboard
   requires:
     optional:
     - component.cert-manager.enabled:cert-manager
