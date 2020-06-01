@@ -7,8 +7,6 @@ parameters:
   parameters:
   - name: serviceaccount
     value: asi
-  - name: aks.resourceGroupName
-    empty: allow
 
 - name: component.ingress
   parameters:
